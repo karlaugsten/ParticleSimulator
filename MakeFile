@@ -1,0 +1,13 @@
+FILES = src/Vortex.cpp src/ParticleCalculator.cpp src/Particle.cpp src/ParticleGenerator.cpp src/ParticleTests.cpp
+CC = g++
+OBJDIR := build
+
+
+all: particle
+files:
+	$(CC) -c $(FILES)
+particle: files
+	$(CC) -o particle ParticleTests.o Particle.o Vortex.o ParticleCalculator.o ParticleGenerator.o
+clean:
+	rm -f *.o
+	rm -f drawpixels
